@@ -14,14 +14,6 @@ class Node: # Might be sufficient to build the entire program
   def __str__(self):
     return self.name
 
-  def add_edges(self, tagObjects): # Looks amongst tag objects and appends them accordingly
-      for tag in self.tags:
-        if tag in tagObjects:
-            print("Correctly matched tag.")
-            self.edges.append(tagObject[index(tag)])
-        else:
-            print("There is no such tag.")
-
   def get_edges(self): 
       print("Node {} has a total of {} edges. They lead to:".format(self.name, len(self.edges)))
       for edge in self.edges:
@@ -34,10 +26,9 @@ class Graph:
     self.tags = []
     print("Created Graph object.")
 
-  def __contains__(self, node_name):
-    if node_name[0] == '#':
-        return any(node_name == tag.name for tag in self.tags)
-    return any(node_name == game.name for game in self.games)
+#   def __contains__(self, node_name):
+#     print("Succesfully overrode 'in' keyword.")
+#     return any(node_name == tag.name for tag in self.tags)
 
   def add_vertex(self, vertex): 
     if vertex.name[0] == '#':
@@ -47,6 +38,16 @@ class Graph:
     print("The games-side of the graph now looks as such:", [node.name for node in self.games])
     print("The category-side of the graph now looks as such:", [node.name for node in self.tags])
 
-#   def add_edge(self, from_vertex, to_vertex, weight = 0): pass
+  def add_edges(self): # Looks amongst tag objects and appends them accordingly
+      for game in self.games:
+        print("Adding edges for {}...".format(game))
+        for tag in game.tags:
+            print("Checking existence of tag {}...".format(tag))
+            for tagObj in self.tags:
+                if tag == tagObj.name:
+                    print("Correctly matched tag.")
+                    game.edges.append(tagObj)
+                else:
+                    print("There is no such tag.")
 
 #   def find_path(self, start_vertex, end_vertex): pass

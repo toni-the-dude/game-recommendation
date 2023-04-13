@@ -22,5 +22,5 @@ graph.add_vertex(tag1)
 graph.add_vertex(tag2)
 graph.add_vertex(tag3)
 # Add edges
-game1.add_edges(graph.tags)
+graph.add_edges()
 game1.get_edges()
