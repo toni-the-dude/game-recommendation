@@ -24,3 +24,9 @@ graph.add_vertex(tag3)
 # Add edges
 graph.add_edges()
 game1.get_edges()
+
+print("Browse games by category")
+print("Here are the available categories:")
+
+while(1):
+    pass

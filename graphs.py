@@ -47,7 +47,8 @@ class Graph:
                 if tag == tagObj.name:
                     print("Correctly matched tag.")
                     game.edges.append(tagObj)
+                    break # Optimize
                 else:
-                    print("There is no such tag.")
+                    print("Still searching...")
 
 #   def find_path(self, start_vertex, end_vertex): pass
