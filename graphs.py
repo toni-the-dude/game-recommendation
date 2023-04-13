@@ -1,9 +1,9 @@
 class Node:
-  # Unit of graph, contains information on a game  
+  # Might be sufficient to build the entire program
   def __init__(self, name="Missing name", tags=[], description="No description", price="NA"): 
-      self.name = name # May override how this gets printed
-      self.tags = tags # These could be the edges
-      self.description = description # May override how this gets printed
+      self.name = name
+      self.tags = tags
+      self.description = description
       self.price = price
       self.edges = []
       if self.name[0] == '#':
@@ -15,18 +15,22 @@ class Node:
   def add_edge(self, vertex): 
       self.edges.append(vertex)
   def get_edges(self): 
+      print("Node {} has a total of {} edges. They lead to:".format(self.name, len(self.edges)))
       for edge in self.edges:
           print(edge)
 
 class Graph:
-  # Here is where the games and tags will connect
+  # Might be useful for navigating the menu
   def __init__(self): 
-    self.nodes = []
+    self.games = []
+    self.tags = []
     print("Created Graph object.")
-#   def __str__(self):
-    # return self.nodes
   def add_vertex(self, vertex): 
-    self.nodes.append(vertex)
-    print("The graph now looks as such:", [node.name for node in self.nodes])
-  def add_edge(self, from_vertex, to_vertex, weight = 0): pass
-  def find_path(self, start_vertex, end_vertex): pass
+    if vertex.name[0] == '#':
+        self.tags.append(vertex)
+    else:
+        self.games.append(vertex)
+    print("The games-side of the graph now looks as such:", [node.name for node in self.games])
+    print("The category-side of the graph now looks as such:", [node.name for node in self.tags])
+#   def add_edge(self, from_vertex, to_vertex, weight = 0): pass
+#   def find_path(self, start_vertex, end_vertex): pass
