@@ -1,7 +1,7 @@
 class Game:
   # Unit of graph, contains information on a game  
   def __init__(self, name="Missing name", tags=[], description="No description", price="0$"): 
-      self.name = name
+      self.name = name # May override how this gets printed
       self.tags = tags
       self.description = description # May override how this gets printed
       self.price = price
@@ -14,8 +14,8 @@ class Game:
 
 class Tag:
   # Unit of graph, contains information on a category of game
-  def __init__(self, tagName=""): 
-      self.tagName = tagName
+  def __init__(self, name=""): 
+      self.name = name
       self.edges = []
   def add_edge(self, vertex): 
       Game.add_edge(self, vertex)
