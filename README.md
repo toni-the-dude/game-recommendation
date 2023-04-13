@@ -1,0 +1,1 @@
+This is a simple project using undirected graphs. There are 3 classes, 2 of which will make up the graph. The user should be able to see games with a certain tag, inspect the game and inspect its other tags.
