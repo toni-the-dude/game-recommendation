@@ -1,9 +1,10 @@
 class Game:
   # Unit of graph, contains information on a game  
-  def __init__(self, title="", tags=[], description=""): 
-      self.title = title
+  def __init__(self, name="Missing name", tags=[], description="No description", price="0$"): 
+      self.name = name
       self.tags = tags
-      self.description = description
+      self.description = description # May override how this gets printed
+      self.price = price
       self.edges = []
   def add_edge(self, vertex): 
       self.edges.append(vertex)
