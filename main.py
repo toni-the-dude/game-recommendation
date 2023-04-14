@@ -54,3 +54,5 @@ while(1):
             else:
                 print("Searching...")
     currentNode.print_details()
+    # userChoice = input("If you want to explore similar games ")
+    # print("See other games with similar tags...")

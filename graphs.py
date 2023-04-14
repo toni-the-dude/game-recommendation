@@ -21,7 +21,7 @@ class Node: # Might be sufficient to build the entire program
           print(edge)
   
   def print_details(self):
-    print("On steam, {} has the following description:\n{}\nIt is listed at {}.\n".format(self.name, self.description, self.price))
+    print("On steam, {} has the following description:\n{}\nIt is listed at {}.\nThe game is tagged with: {}\n".format(self.name, self.description, self.price, self.tags))
 
 class Graph:
   # Might be useful for navigating the menu
