@@ -19,6 +19,9 @@ class Node: # Might be sufficient to build the entire program
       print("Node {} has a total of {} edges. They lead to:".format(self.name, len(self.edges)))
       for edge in self.edges:
           print(edge)
+  
+  def print_details(self):
+    print("On steam, {} has the following description:\n{}\nIt is listed at {}.\n".format(self.name, self.description, self.price))
 
 class Graph:
   # Might be useful for navigating the menu
@@ -53,4 +56,11 @@ class Graph:
                 else:
                     print("Still searching...")
 
+  def print_games(self): 
+    for game in self.games:
+      print(game)
+
+  def print_tags(self): 
+    for tag in self.tags:
+      print(tag)
 #   def find_path(self, start_vertex, end_vertex): pass
