@@ -27,6 +27,19 @@ game1.get_edges()
 
 print("Browse games by category")
 print("Here are the available categories:")
+currentNode = None
 
 while(1):
-    pass
+    for tag in graph.tags:
+        print(tag)
+    userChoice = input("What do you choose?\n")
+    print("You chose {}.".format(userChoice))
+    for tag in graph.tags:
+        if tag.name == userChoice:
+            print("That is a valid choice!")
+            currentNode = tag
+            break
+        else:
+            print("Searching...")
+    if currentNode != None:
+        currentNode.get_edges()

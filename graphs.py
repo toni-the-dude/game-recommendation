@@ -12,6 +12,7 @@ class Node: # Might be sufficient to build the entire program
         print("Created Node object '{}'. It represents a game.".format(self.name))
 
   def __str__(self):
+    print("Overrode str method.")
     return self.name
 
   def get_edges(self): 
@@ -46,7 +47,8 @@ class Graph:
             for tagObj in self.tags:
                 if tag == tagObj.name:
                     print("Correctly matched tag.")
-                    game.edges.append(tagObj)
+                    game.edges.append(tagObj) # Append edge for game
+                    tagObj.edges.append(game) # Append edge for tag too since it is undirected
                     break # Optimize
                 else:
                     print("Still searching...")
