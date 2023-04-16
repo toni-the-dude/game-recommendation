@@ -70,7 +70,8 @@ class Graph:
     menu = {
         "1": self.print_tags,
         "2": self.print_games,
-        "3": self.find_pattern
+        "3": self.find_pattern,
+        # "4": self.
     }
     try:
       menu[userChoice]()
@@ -79,6 +80,7 @@ class Graph:
   
   def find_pattern(self):
     arrayOfStrings = None
+    whereToLook = None
     while True:
       whereToLook = input("You can search in:\n1 - {}\n2 - {}\n".format("Categories", "Games"))
       if whereToLook == "1": 
@@ -89,6 +91,8 @@ class Graph:
         break
       print("Please choose one of the provided options.")
     pattern = input("Type in part of the word you are looking for:")
+    displayIndex = 1
+    compiledChoices = []
     for string in arrayOfStrings:
         if len(pattern) > len(string): continue
         index = 0
@@ -98,6 +102,21 @@ class Graph:
             else:
                 index = 0
             if index == len(pattern):
-                print(string)
+                print("{} - {}".format(displayIndex, string))
+                compiledChoices.append(string)
+                displayIndex += 1
                 break
-#   def find_path(self, start_vertex, end_vertex): pass
+    userChoice = input("You may choose from the results above. Awaiting your input: ")
+    userChoice = compiledChoices[int(userChoice) - 1]
+    currentNode = None
+    if whereToLook == "1":
+      print("Here are games listed with the tag {}.".format(userChoice))
+      for tag in self.tags:
+        if tag.name == userChoice:
+          currentNode = tag
+      tag.get_edges() # Use try-except
+    elif whereToLook == "2":
+      for game in self.games:
+        if game.name == userChoice:
+          currentNode = game
+      currentNode.print_details() # Use try-except
