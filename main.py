@@ -12,7 +12,7 @@ def findPattern(pattern, arrayOfStrings):
                 index = 0
             if index == len(pattern):
                 print(string)
-                continue
+                break
 # Create graph
 graph = Graph()
 # Create & add games
@@ -33,13 +33,14 @@ currentNode = None
 while(1):
     userChoice = input("What do you choose?\n")
     print("You chose... {}.".format(userChoice))
-    for tag in graph.tags:
-        if tag.name == userChoice:
-            print("That is a valid choice!")
-            currentNode = tag
-            break
-        else:
-            print("Searching...")
+    # for tag in graph.tags:
+    #     if tag.name == userChoice:
+    #         print("That is a valid choice!")
+    #         currentNode = tag
+    #         break
+    #     else:
+    #         print("Searching...")
+    findPattern(userChoice, tagData)
     if currentNode != None:
         # print("Here are some games tagged with {}.".format(currentNode.name))
         currentNode.get_edges()
