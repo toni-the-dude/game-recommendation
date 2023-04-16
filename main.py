@@ -1,6 +1,18 @@
 from graphs import *
 from data import *
-
+# Define functions
+def findPattern(pattern, arrayOfStrings):
+    for string in arrayOfStrings:
+        if len(pattern) > len(string): continue
+        index = 0
+        for chr in string:
+            if chr == pattern[index]:
+                index += 1
+            else:
+                index = 0
+            if index == len(pattern):
+                print(string)
+                continue
 # Create graph
 graph = Graph()
 # Create & add games

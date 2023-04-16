@@ -12,7 +12,7 @@ class Node: # Might be sufficient to build the entire program
         print("Created Node object '{}'. It represents a game.".format(self.name))
 
   def __str__(self):
-    print("Overrode str method.")
+    # print("Overrode str method.")
     return self.name
 
   def get_edges(self): 
