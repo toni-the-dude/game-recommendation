@@ -63,4 +63,41 @@ class Graph:
   def print_tags(self): 
     for tag in self.tags:
       print(tag)
+
+  def user_menu(self):
+    print("Here are the actions you can perform:\n1 - {}\n2 - {}\n3 - {}\n".format("View categories", "View games", "Search"))
+    userChoice = input("Your choice: ")
+    menu = {
+        "1": self.print_tags,
+        "2": self.print_games,
+        "3": self.find_pattern
+    }
+    try:
+      menu[userChoice]()
+    except KeyError:
+      print("Invalid choice.")
+  
+  def find_pattern(self):
+    arrayOfStrings = None
+    while True:
+      whereToLook = input("You can search in:\n1 - {}\n2 - {}\n".format("Categories", "Games"))
+      if whereToLook == "1": 
+        arrayOfStrings = [tag.name for tag in self.tags]
+        break
+      elif whereToLook == "2":
+        arrayOfStrings = [game.name for game in self.games]
+        break
+      print("Please choose one of the provided options.")
+    pattern = input("Type in part of the word you are looking for:")
+    for string in arrayOfStrings:
+        if len(pattern) > len(string): continue
+        index = 0
+        for chr in string:
+            if chr == pattern[index]:
+                index += 1
+            else:
+                index = 0
+            if index == len(pattern):
+                print(string)
+                break
 #   def find_path(self, start_vertex, end_vertex): pass

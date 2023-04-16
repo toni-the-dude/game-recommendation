@@ -1,6 +1,6 @@
 tagData = [
     # [name]
-    "#roguelike", "#co-op", "#looter-shooter", "exploration", "#deckbuilder", "#turn-based", "#strategy", "#historical", "#metroidvania", "#platformer", "#survival", "#open-world", "#pirates", "#city-builder", "#god-game", "#hack-and-slash", "#rpg", "#dungeon-crawler"
+    "#roguelike", "#co-op", "#looter-shooter", "#exploration", "#deckbuilder", "#turn-based", "#strategy", "#historical", "#metroidvania", "#platformer", "#survival", "#open-world", "#pirates", "#city-builder", "#god-game", "#hack-and-slash", "#rpg", "#dungeon-crawler"
 ]
 
 gameData = [
