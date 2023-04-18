@@ -91,32 +91,43 @@ class Graph:
         break
       print("Please choose one of the provided options.")
     pattern = input("Type in part of the word you are looking for:")
+    pattern = pattern.lower()
     displayIndex = 1
     compiledChoices = []
-    for string in arrayOfStrings:
-        if len(pattern) > len(string): continue
-        index = 0
-        for chr in string:
-            if chr == pattern[index]:
-                index += 1
-            else:
-                index = 0
-            if index == len(pattern):
-                print("{} - {}".format(displayIndex, string))
-                compiledChoices.append(string)
-                displayIndex += 1
-                break
-    userChoice = input("You may choose from the results above. Awaiting your input: ")
-    userChoice = compiledChoices[int(userChoice) - 1]
+    try:
+      for string in arrayOfStrings:
+          if len(pattern) > len(string): continue
+          index = 0
+          for chr in string.lower():
+              if chr == pattern[index]:
+                  index += 1
+              else:
+                  index = 0
+              if index == len(pattern):
+                  print("{} - {}".format(displayIndex, string))
+                  compiledChoices.append(string)
+                  displayIndex += 1
+                  break
+    except IndexError:
+      print("Either the pattern has no matches, or an error has occurred.")
+      return
+    try:
+      userChoice = input("You may choose from the results above. Awaiting your input: ")
+      userChoice = compiledChoices[abs(int(userChoice)) - 1]
+    except IndexError:
+      print("Index not found. Did you make sure to choose one from the presented list?")
+      return
     currentNode = None
     if whereToLook == "1":
       print("Here are games listed with the tag {}.".format(userChoice))
       for tag in self.tags:
         if tag.name == userChoice:
           currentNode = tag
-      tag.get_edges() # Use try-except
+        # print(currentNode) # Troubleshoot
+      currentNode.get_edges() # Use try-except
     elif whereToLook == "2":
       for game in self.games:
         if game.name == userChoice:
           currentNode = game
       currentNode.print_details() # Use try-except
+      # Implement suggestion system

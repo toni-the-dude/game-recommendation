@@ -1,7 +1,5 @@
 from graphs import *
 from data import *
-# Define functions
-
 
 # Create graph
 graph = Graph()
@@ -13,12 +11,9 @@ for tag in tagData:
     graph.add_vertex(Node(tag))
 # Add edges
 graph.add_edges()
-# game1.get_edges()
+# game1.get_edges() # Testing
 
 print("Browse games by category")
-# currentNode = None
 
 while(1):
     graph.user_menu()
-    # userChoice = input("If you want to explore similar games ")
-    # print("See other games with similar tags...")
