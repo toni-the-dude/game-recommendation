@@ -1,6 +1,6 @@
-This is a simple project using undirected graphs. The user should be able to see games with a certain tag, inspect the game and inspect its other tags.
-
-The user interacts with the data via a text-based menu.
+This is a simple project using undirected graphs. The user should be able to see games with a certain tag, inspect the game and inspect its other tags.\n
+\n
+The user interacts with the data via a text-based menu.\n
 When running the program, they are presented with 3 choices:
 1 - View categories, which prints all available tags to the console
 2 - View games, which prints all available games to the console
