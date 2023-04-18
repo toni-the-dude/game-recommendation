@@ -131,3 +131,13 @@ class Graph:
           currentNode = game
       currentNode.print_details() # Use try-except
       # Implement suggestion system
+      print("See games with similar tags:")
+      suggestions = []
+      for tag in currentNode.edges:
+        for game in tag.edges:
+          if game not in suggestions and game is not currentNode:
+            suggestions.append((game, tag))
+      displayIndex = 1
+      for su in suggestions:
+        print("{} - {} (matched on at least 1 tag: {})".format(displayIndex, su[0].name, su[1].name))
+        displayIndex += 1
