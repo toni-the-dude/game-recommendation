@@ -16,4 +16,5 @@ graph.add_edges()
 print("Browse games by category")
 
 while(1):
+    print()
     graph.user_menu()
