@@ -1,4 +1,4 @@
-This is a simple project using undirected graphs. The user should be able to see games with a certain tag, inspect the game and inspect its other tags.\n
+This is a simple project using undirected graphs. The user should be able to see games with a certain tag, inspect the game and inspect its other tags.<br>
 \n
 The user interacts with the data via a text-based menu.\n
 When running the program, they are presented with 3 choices:
