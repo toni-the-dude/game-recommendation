@@ -7,3 +7,5 @@ When running the program, they are presented with 3 choices:<br>
 3 - Search, which has 2 functionalities:<br>
     <p>&emsp; i. Search by category, where the user is prompted for a pattern to look for in the available tags (this pattern is not case-sensitive). All matches will be indexed and displayed to the console. The user can done choose a tag via its index in order to find games with that tag.<br></p>
     <p>&emsp; ii. Search in games, where a user is similarly asked for a pattern and shown all matches in the console. The user can then choose a game and be presented with all recorded details of that game, as well as be shown suggestions (or games with similar tags).<br></p>
+
+<p> Also, here is a post where I talked a bit more about the project: https://discuss.codecademy.com/t/simple-game-recommendation-program/746498</p>
